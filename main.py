@@ -6,75 +6,320 @@ from typing import Optional
 app = FastAPI()
 
 characters = {
-    1: {
+    "1": {
         "name": "Pierre",
         "profession": "Seller",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+        "gender": "Male",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/7/7e/Pierre.png"
     },
-    2: {
+    "2": {
         "name": "Caroline",
         "profession": "Gym Teacher",
-        "gender" : "Female",
-        "married": True,
-        "image": "url"
+        "gender": "Female",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/87/Caroline.png"
     },
-    3: {
-        "name": "Pierre2",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "3": {
+        "name": "Jas",
+        "profession": "Child",
+        "gender": "Female",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/5/55/Jas.png"
     },
-    4: {
-        "name": "Pierre3",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "4": {
+        "name": "Vincent",
+        "profession": "Child",
+        "gender": "Male",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f1/Vincent.png"
     },
-    5: {
-        "name": "Pierre4",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "5": {
+        "name": "Lewis",
+        "profession": "Mayor",
+        "gender": "Male",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/2/2b/Lewis.png"
     },
-    6: {
-        "name": "Pierre5",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "6": {
+        "name": "Robin",
+        "profession": "Carpenter",
+        "gender": "Female",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/1/1b/Robin.png"
     },
-    7: {
-        "name": "Pierre6",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "7": {
+        "name": "Demetrius",
+        "profession": "Scientist",
+        "gender": "Male",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f9/Demetrius.png"
     },
-    8: {
-        "name": "Pierre7",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "8": {
+        "name": "Maru",
+        "profession": "Scientist",
+        "gender": "Female",
+        "marriageable": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f8/Maru.png"
     },
-    9: {
-        "name": "Pierre8",
-        "profession": "Fire",
-        "gender" : "Male",
-        "married": True,
-        "image": "url"
+    "9": {
+        "name": "Sebastian",
+        "profession": "Programmer",
+        "gender": "Male",
+        "marriageable": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/a/a8/Sebastian.png"
     },
-    10: {
-        "name": "Pierre9",
-        "profession": "Fire",
-        "gender" : "Male",
+    "10": {
+        "name": "Abigail",
+        "profession": "Adventurer",
+        "gender": "Female",
+        "marriageable": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/88/Abigail.png"
+    },
+    "11": {
+        "name": "Alex",
+        "profession": "Athlete",
+        "gender": "Male",
+        "marriageable": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/0/04/Alex.png"
+    },
+    "12": {
+        "name": "Evelyn",
+        "profession": "Grandma",
+        "gender": "Female",
+        "marriageable": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/8e/Evelyn.png"
+    },
+    "13": {
+        "name": "George",
+        "profession": "Retired",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/7/78/George.png"
+    },
+    "14": {
+        "name": "Penny",
+        "profession": "Teacher",
+        "gender": "Female",
         "married": True,
-        "image": "url"
+        "image": "https://stardewvalleywiki.com/mediawiki/images/a/ab/Penny.png"
+    },
+    "15": {
+        "name": "Gus",
+        "profession": "Saloon Owner",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/5/52/Gus.png"
+    },
+    "16": {
+        "name": "Clint",
+        "profession": "Blacksmith",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/31/Clint.png"
+    },
+    "17": {
+        "name": "Willy",
+        "profession": "Fisherman",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/82/Willy.png"
+    },
+    "18": {
+        "name": "Sandy",
+        "profession": "Oasis Owner",
+        "gender": "Female",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/4e/Sandy.png"
+    },
+    "19": {
+        "name": "Emily",
+        "profession": "Seamstress",
+        "gender": "Female",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/2/28/Emily.png"
+    },
+    "20": {
+        "name": "Shane",
+        "profession": "Laborer",
+        "gender": "Male",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/8b/Shane.png"
+    },
+    "21": {
+        "name": "Pam",
+        "profession": "Bus Driver",
+        "gender": "Female",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/da/Pam.png"
+    },
+    "22": {
+        "name": "Harvey",
+        "profession": "Doctor",
+        "gender": "Male",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/95/Harvey.png"
+    },
+    "23": {
+        "name": "Marlon",
+        "profession": "Adventurer's Guild",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/37/Marlon.png"
+    },
+    "24": {
+        "name": "Wizard",
+        "profession": "Wizard",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/c/c7/Wizard.png"
+    },
+    "25": {
+        "name": "Gil",
+        "profession": "Traveler",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/6/64/Gil.png"
+    },
+    "26": {
+        "name": "Linus",
+        "profession": "Wilderness",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/31/Linus.png"
+    },
+    "27": {
+        "name": "Krobus",
+        "profession": "Shadow Guy",
+        "gender": "Unknown",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/7/71/Krobus.png"
+    },
+    "28": {
+        "name": "Haley",
+        "profession": "Photographer",
+        "gender": "Female",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/1/1b/Haley.png"
+    },
+    "29": {
+        "name": "Helper",
+        "profession": "Does tasks",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/2/21/Henchman_Portrait_1.png"
+    },
+    "30": {
+        "name": "Grandpa",
+        "profession": "Unknown",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/8/88/Grandpa.png"
+    },
+    "31": {
+        "name": "Sam",
+        "profession": "Musician",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/94/Sam.png"
+    },
+    "32": {
+        "name": "Elliott",
+        "profession": "Author",
+        "gender": "Male",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/b/bd/Elliott.png"
+    },
+    "33": {
+        "name": "Jodi",
+        "profession": "Home Maker",
+        "gender": "Female",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/41/Jodi.png"
+    },
+    "34": {
+        "name": "Kent",
+        "profession": "Soldier",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/99/Kent.png"
+    },
+    "35": {
+        "name": "Marnie",
+        "profession": "Rancher",
+        "gender": "Female",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/5/52/Marnie.png"
+    },
+    "36": {
+        "name": "Leah",
+        "profession": "Artist",
+        "gender": "Female",
+        "married": True,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/e/e6/Leah.png"
+    },
+    "37": {
+        "name": "Governor",
+        "profession": "Mayor",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/46/Governor.png"
+    },
+    "38": {
+        "name": "Gunther",
+        "profession": "Museum Curator",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/3/3d/Gunther.png"
+    },
+    "39": {
+        "name": "Dwarf",
+        "profession": "Adventurer",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/e/ed/Dwarf.png"
+    },
+    "40": {
+        "name": "Morris",
+        "profession": "JojaMart Manager",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/9/90/Morris.png"
+    },
+    "41": {
+        "name": "Profesor Snail",
+        "profession": "Scientist",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/d/d4/Professor_Snail.png"
+    },
+    "42": {
+        "name": "Security Guard",
+        "profession": "Security Guard",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/f/f5/Bouncer.png"
+    },
+    "43": {
+        "name": "Mr. Qi",
+        "profession": "Unknown",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/b/b4/Mr._Qi.png"
+    },
+    "44": {
+        "name": "Leo",
+        "profession": "Artist",
+        "gender": "Male",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/1/1d/Leo.png"
+    },
+    "45": {
+        "name": "Birdie",
+        "profession": "Unknown",
+        "gender": "Female",
+        "married": False,
+        "image": "https://stardewvalleywiki.com/mediawiki/images/4/46/Birdie.png"
     }
 }
 
@@ -84,7 +329,7 @@ async def get_characters():
 
 
 @app.get('/characters/{character_id}')
-async def get_character(character_id: int):
+async def get_character(character_id: str):
     try:
         character = characters[character_id]
         return character
@@ -104,7 +349,7 @@ async def post_characters(character: Optional[Character]=None):
 
 
 @app.put('/characters/{character_id}')
-async def put_character(character_id : int, character: Character):
+async def put_character(character_id : str, character: Character):
     if character_id in characters:
         characters[character_id] = character
         character.id = character_id
@@ -116,7 +361,7 @@ async def put_character(character_id : int, character: Character):
 
 
 @app.delete('/characters/{character_id}')
-async def delete_character(character_id: int):
+async def delete_character(character_id: str):
     if character_id in characters:
         del characters[character_id]
         return Response(status_code=204)
@@ -125,7 +370,7 @@ async def delete_character(character_id: int):
     
 
 @app.patch('/characters/{character_id}', response_model=Character)
-async def patch_character(character_id : int, character: Character):
+async def patch_character(character_id : str, character: Character):
     if character_id in characters:
         stored_character = characters[character_id]
         stored_character_model = Character(**stored_character)
@@ -140,4 +385,4 @@ async def patch_character(character_id : int, character: Character):
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run('main:app', host="10.234.84.41", port=8000, log_level="info", reload=True) #host="10.234.84.41"
+    uvicorn.run('main:app', host="127.0.0.1", port=8000, log_level="info", reload=True) #host="10.234.84.41"

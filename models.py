@@ -6,6 +6,6 @@ class Character(BaseModel):
     name: str | None = None
     profession: str | None = None
     gender: str | None = None
-    married: bool = False
+    marriageable: bool = False
     image: str = "teste"
     
