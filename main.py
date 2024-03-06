@@ -374,6 +374,7 @@ async def patch_character(character_id : str, character: Character):
     if character_id in characters:
         stored_character = characters[character_id]
         stored_character_model = Character(**stored_character)
+        del stored_character_model.id
         update_character = character.model_dump(exclude_unset=True)
         updated_character = stored_character_model.model_copy(update=update_character)
         characters[character_id] = jsonable_encoder(updated_character)
